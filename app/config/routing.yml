@@ -1,5 +1,3 @@
 metinet_app:
     resource: "@MetinetAppBundle/Resources/config/routing.xml"
     prefix:   /
-
-

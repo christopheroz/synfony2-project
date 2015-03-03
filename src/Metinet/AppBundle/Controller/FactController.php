@@ -2,28 +2,21 @@
 
 namespace Metinet\AppBundle\Controller;
 
+use Metinet\AppBundle\Repository\InMemoryFactRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class FactController extends Controller
 {
-    public function homeAction(){
-     /*   $facts = [
-            [
-                "number" => 900000,
-                "summary" => "La longueur en kilomètres du réseau de canalisations d'eau potable français"
-            ],
-            [
-                "number" => 5,
-                "summary" => "C'est le nombre de rhinocéroos blancs du Nord encore en vie : deux dans des zoos, trois dans une réserve kenyane"
-            ]
-        ];
-return $this->render('MetinetAppBundle:Fact:home.html.twig',array(
-    "facts" => $facts
-));*/
-        $inMemoryRepository = new \InMemoryRepository();
+    public function homeAction()
+    {
+        $this->get("fact_repository.in_memory")->add(90000, "tototototo");
+        $this->get("fact_repository.in_memory")->add(150, "eziufgzaeiaehaz");
 
-        return $this->render('MetinetAppBundle:Fact:home.html.twig',array(
-            "facts" => $inMemoryRepository->findAll()));
-
+        return $this->render(
+            'MetinetAppBundle:Fact:home.html.twig',
+            array(
+                "facts" => $this->get("fact_repository.in_memory")->findAll()
+            )
+        );
     }
 }
