@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h1>Create account</h1>
+    <form action="{{ path("createForm") }}" method="post">
+        {{ form_widget(form) }}
+        {{ form_rest(form) }}
+    </form>
+
+{% endblock %}

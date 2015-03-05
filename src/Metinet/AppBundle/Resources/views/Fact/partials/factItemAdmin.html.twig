@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{ fact.number }}</div>
+    <div class="panel-body">
+        <p>{{ fact.summary }}</p>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-success btn-lg" href="{{ path("pending_facts_change_status", {"id": fact.id, "status": "accepted" }) }}">Accepter</a>
+        <a class="btn btn-danger btn-lg" href="{{ path("pending_facts_change_status", {"id": fact.id, "status": "refused" }) }}">Refuser</a>
+    </div>
+</div>

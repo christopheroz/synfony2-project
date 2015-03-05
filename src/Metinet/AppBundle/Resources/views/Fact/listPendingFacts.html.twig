@@ -1,0 +1,8 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h1>Pending facts</h1>
+    {% for fact in facts %}
+        {% include "MetinetAppBundle:Fact/partials:factItemAdmin.html.twig" %}
+    {% endfor %}
+{% endblock %}

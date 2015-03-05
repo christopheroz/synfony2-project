@@ -3,10 +3,7 @@
 {% block headTitle %}MetinetAppBundle:Fact:home{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Fact:home page</h1>
-    <ul>
-        {% for fact in facts %}
-        <li>{{ fact["number"] }} : {{ fact["summary"] }}</li>
-        {% endfor %}
-    </ul>
+    {% for fact in facts %}
+        {% include "MetinetAppBundle:Fact/partials:factItem.html.twig" %}
+    {% endfor %}
 {% endblock %}
